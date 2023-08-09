@@ -19,9 +19,9 @@ const Nav = () => {
   },[])
     
   return (
-    <nav className={`nav ${show && "nav_Black"}`}>
-        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav_log' onClick={()=>window.location.reload()}/>
-        <img alt='User logged' src ={profileImg} className='nav_avatar'width={'50px'}/>
+    <nav className={`nav ${show && "nav__black"} `}>
+        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav__logo' onClick={()=>window.location.reload()}/>
+        <img alt='User logged' src ={profileImg} className='nav__avatar'width={'50px'}/>
     </nav>
   )
 }

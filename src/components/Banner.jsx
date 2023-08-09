@@ -27,20 +27,20 @@ export const Banner = () => {
     },[]);
 
   return (
-    <header className='banner' style={{
+    <div className='banner' style={{
         backgroundImage:`url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")`, 
         backgroundPosition:"top center",
         backgroundSize:"cover"}}>
             
-        <div className='banner_contents'>
-            <h1>{movie.title||movie.name||movie.orginal_name}</h1>
+        <div className='banner__contents'>
+            <h1 className='banner__title'>{movie.title||movie.name||movie.orginal_name}</h1>
             <div className='banner_buttons'>
-                <button className='banner_button play'>play</button>
-                <button className='banner_button info'>More Information</button>
+                <button className='banner__button play'>play</button>
+                <button className='banner__button info'>More Information</button>
             </div>
-            <h1 className='banner_description'>{movie.overview}</h1>
+            <h1 className='banner__description'>{movie.overview}</h1>
         </div>
         <div className='banner--fadeBottom'/>
-    </header>
+    </div>
   )
 }
