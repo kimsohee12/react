@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     height: 30px;
-    z-index: 1;
+    z-index: 2 !important;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,8 @@
   }
   
   .nav__black {
-      background-color: #111;
+      background-color: #080808;
+      color: black;
   }
   
   .nav__logo {
