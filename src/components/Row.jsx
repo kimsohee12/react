@@ -40,20 +40,20 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                 loop={true} // loop 기능을 사용할 것인지
                 breakpoints={{
                     1378: {
-                        slidesPerView: 5, // 한번에 보이는 슬라이드 개수
-                        slidesPerGroup: 5, // 몇개씩 슬라이드 할지
+                        slidesPerView: 6, // 한번에 보이는 슬라이드 개수
+                        slidesPerGroup: 6, // 몇개씩 슬라이드 할지
                     },
                     998: {
+                        slidesPerView: 5,
+                        slidesPerGroup: 5,
+                    },
+                    625: {
                         slidesPerView: 4,
                         slidesPerGroup: 4,
                     },
-                    625: {
+                    0: {
                         slidesPerView: 3,
                         slidesPerGroup: 3,
-                    },
-                    0: {
-                        slidesPerView: 2,
-                        slidesPerGroup: 2,
                     },
                 }}
                 navigation  // arrow 버튼 사용 유무 
