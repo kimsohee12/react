@@ -8,16 +8,16 @@ const Footer = () => {
                 <FooterLinkContainer>
                     <FooterLinkTitle>넷플릭스 대한민국</FooterLinkTitle>
                     <FooterLinkContent>
-                        <FooterLink href="https://help.netflix.com/ko/node/412">
+                        <FooterLink href="/">
                             넷플릭스 소개
                         </FooterLink>
-                        <FooterLink href="https://help.netflix.com/ko">
+                        <FooterLink href="/">
                             고객 센터
                         </FooterLink>
-                        <FooterLink href="https://help.netflix.com/ko/">
+                        <FooterLink href="/">
                             미디어 센터
                         </FooterLink>
-                        <FooterLink href="https://help.netflix.com/ko/">
+                        <FooterLink href="/">
                             이용 약관
                         </FooterLink>
                     </FooterLinkContent>
