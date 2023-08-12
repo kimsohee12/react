@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import logoImg from '../img/Netflix-Brand-Logo.png'
 import profileImg from "../img/netflixpfImg.jpg";
 import "./Nav.css"
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
   const [show,setShow] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const nav = useNavigate();
 
   useEffect(()=>{
     window.addEventListener("scroll",()=>{
-      console.log("scroll",window.scrollY);
       if(window.scrollY > 50){
         setShow(true);
       }else{
@@ -16,11 +18,17 @@ const Nav = () => {
       }
     })
     window.removeEventListener("scroll",()=>{})
-  },[])
+  },[]);
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    nav(`/search?q=${e.target.value}`);
+  };
     
   return (
     <nav className={`nav ${show && "nav__black"} `}>
-        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav__logo' onClick={()=>window.location.reload()}/>
+        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav__logo' onClick={()=>nav('/')}/>
+        <input value={searchValue} onChange={handleChange} className="nav__input" type="text" placeholder=" 영화를 검색해주세요."/>
         <img alt='User logged' src ={profileImg} className='nav__avatar'width={'50px'}/>
     </nav>
   )
