@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api/axios";
-// import MovieModal from "./MovieModal";
+import MovieModal from "./MovieModal";
 import "./Row.css";
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 const Row = ({ title, fetchUrl, isLargeRow }) => {
+    
     const [movies, setMovies] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [movieSelected, setMovieSelected] = useState({});
@@ -22,7 +23,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
     const fetchMovieData = async () => {
         const request = await axios.get(fetchUrl);
-        console.log("request", request);
+        console.log("requestRow", request);
         setMovies(request.data.results);
     };
 
@@ -41,15 +42,15 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                 breakpoints={{
                     1378: {
                         slidesPerView: 5, // 한번에 보이는 슬라이드 개수
-                        slidesPerGroup: 5, // 몇개씩 슬라이드 할지
+                        slidesPerGroup: 3, // 몇개씩 슬라이드 할지
                     },
                     998: {
                         slidesPerView: 4,
-                        slidesPerGroup: 4,
+                        slidesPerGroup:3,
                     },
                     625: {
                         slidesPerView: 3,
-                        slidesPerGroup: 3,
+                        slidesPerGroup: 2,
                     },
                     0: {
                         slidesPerView: 2,
@@ -60,15 +61,15 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                 pagination={{ clickable: true }} // 페이지 버튼 보이게 할지 
             >
                 <div id={movies.id} className="row__posters">
-                    {movies.map((movie) => (
+                    {movies.map((movie,index) => (
                         <SwiperSlide>
                             <img
-                                key={movie.id}
+                                key={index}
                                 style={{ padding: "25px 0" }}
                                 className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                                src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path
-                                    } `}
+                                src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path} `}
                                 alt={movie.name}
+                                // 클릭시 영화 정보 모달 열기
                                 onClick={() => handleClick(movie)}
                             />
                         </SwiperSlide>
@@ -76,9 +77,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
                 </div>
             </Swiper>
 
-            {/* {modalOpen && (
+            {modalOpen && (
                 <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
-            )} */}
+            )}
         </section>
     );
 }
