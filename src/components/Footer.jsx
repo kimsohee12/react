@@ -23,7 +23,7 @@ const Footer = () => {
                     </FooterLinkContent>
                     <FooterDescContainer>
                         <FooterDescRights>
-                            Netflix Rights Reserved.
+                            Netflix Rights Reserved. - kim so hee
                         </FooterDescRights>
                     </FooterDescContainer>
                 </FooterLinkContainer>
