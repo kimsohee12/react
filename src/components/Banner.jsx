@@ -4,11 +4,10 @@ import requests from "../api/requests";
 import "./Banner.css";
 import styled from "styled-components";
 
-const Banner = () => {
+export const Banner = () => {
 
     const [movie, setMovie] = useState([]);
     const [isClicked, setIsClicked] = useState(false);
-    const [moreOV,setMoreOV] = useState(false);
 
     useEffect(() => {
         fetchData();
@@ -35,16 +34,8 @@ const Banner = () => {
 
     //movie.overview(줄거리)가 길면 '...' 으로 자르기
     const truncate = (str, n) => {
-        return str?.length > n ? str.substr(0, n - 1) + "... 더보기" : str;
+        return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     };
-    const videoBtnClick=()=>{
-        if(movie.videos.results.length==0){
-            alert('비디오 없음')
-        }else{
-            setIsClicked(true)
-
-        }
-    }
 
     console.log('movie', movie);
     if (!isClicked) {
@@ -64,18 +55,15 @@ const Banner = () => {
                         <div className="banner__buttons">
                             <button
                                 className="banner__button play"
-                                onClick={() => videoBtnClick()}
+                                onClick={() => setIsClicked(true)}
                             >
                                 Play
                             </button>
                             <button className="banner__button info">More Information</button>
                         </div>
 
-                        <h1 className="banner__description" onClick={()=>setMoreOV(true)}>
-                    
-                            {moreOV? truncate(movie.overview, 600) :truncate(movie.overview, 100)}
-                            
-                            
+                        <h1 className="banner__description">
+                            {truncate(movie.overview, 100)}
                         </h1>
                     </div>
 
@@ -97,7 +85,6 @@ const Banner = () => {
         );
     }
 }
-export default Banner
 
 const Iframe = styled.iframe`
     width: 100%;
