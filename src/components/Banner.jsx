@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import requests from "../api/requests";
 import "./Banner.css";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 export const Banner = () => {
 
@@ -40,7 +41,13 @@ export const Banner = () => {
 
     const videoBtnClick=()=>{
         if(movie.videos.results.length==0){
-            alert('비디오 없음')
+            Swal.fire({
+                icon: "error",
+                color:"rgb(222, 222, 222)",
+                background:'#1f1f1f',
+                text: '해당 영화는 등록 된 예고편이 없습니다.',
+                confirmButtonText: "확인",
+            })
         }else{
             setIsClicked(true)
 
@@ -68,7 +75,6 @@ export const Banner = () => {
                             >
                                 Play
                             </button>
-                            {/* <button className="banner__button info">More Information</button> */}
                         </div>
 
                         <h1 className="banner__description" onClick={()=>setMoreOV(true)}>
