@@ -3,12 +3,14 @@
     object-fit: contain;
     background-position: center;
     margin-bottom: 35px;
+    height: 500px;
   }
 
   .banner__contents {
     margin-left: 40px;
     padding-top: 140px;
     height: 190px;
+    width: 400px;
   }
 @font-face {
     font-family: 'GangwonState';
