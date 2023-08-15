@@ -3,14 +3,14 @@
     object-fit: contain;
     background-position: center;
     margin-bottom: 35px;
-    height: 500px;
+    height: 800px;
   }
 
   .banner__contents {
     margin-left: 40px;
-    padding-top: 140px;
+    padding-top: 170px;
     height: 190px;
-    width: 400px;
+    width: auto;
   }
 @font-face {
     font-family: 'GangwonState';
@@ -33,6 +33,7 @@
   .banner__title {
     margin-top: 10%;
     font-size: 3rem;
+    width: 75%;
     font-weight: 800;
     padding-bottom: 0.5rem;
     color: rgb(212, 18, 18);
@@ -41,20 +42,20 @@
     z-index: 1;
   }
   .banner__description {
-    width: 45rem;
-    line-height: 1.4;
+    width: 60%;
+    line-height: 1.3;
     padding-top: 1rem;
     font-weight: 500;
-    font-size: 1.5rem;
-    max-width: 50%;
-    height: 80px;
+    font-size: 1.3rem;
+    max-width: 65%;
+    height: auto;
     font-family: 'SUITE-Regular';
     position: absolute;
     z-index: 1;
   }
 
   .banner--fadeBottom {
-    height: 38rem;
+    height: 51rem;
     background-image: linear-gradient(
       180deg,
       transparent,
@@ -111,22 +112,34 @@
     margin-left: 4px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1100px) {
     
     .banner {
       position: relative;
-      height: 600px;
+      height: 800px;
     }
-    .banner--fadeBottom {
-    }
+
+  }
+  @media (min-width: 980px) {
     
+    .banner__description {
+      width: 60%;
+      font-weight: 500;
+      font-size: 1.3rem;
+      max-width: 75%;
+    }
+
   }
   @media (max-width: 768px) {
+    .banner{
+      height: 550px;
+    }
     .banner--fadeBottom {
-        height: 7.5rem;        
+        height: 35rem;        
       }
     .banner__title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        width: 75%;
         position: relative;
         z-index: 1;
       }
@@ -135,9 +148,9 @@
       margin-left: 0px !important;
     }
     .banner__description {
-      font-size: 0.8rem !important;
+      font-size: 0.9rem !important;
       width: auto !important;
-      max-width: 280px;
+      max-width: 72%;
     }
     .info {
       text-align: start;
