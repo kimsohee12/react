@@ -25,9 +25,13 @@ const Nav = () => {
     nav(`/search?q=${e.target.value}`);
   };
     
+  const clickLogo =()=>{
+    nav('/')
+    setSearchValue("")
+  }
   return (
     <nav className={`nav ${show && "nav__black"} `}>
-        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav__logo' onClick={()=>nav('/')}/>
+        <img alt='Netflix logo'width={'150px'} src={logoImg} className='nav__logo' onClick={()=>clickLogo()}/>
         <input value={searchValue} onChange={handleChange} className="nav__input" type="text" placeholder=" 영화를 검색해주세요."/>
         <img alt='User logged' src ={profileImg} className='nav__avatar'width={'50px'}/>
     </nav>
