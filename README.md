@@ -28,16 +28,16 @@ The Movie API 를 활용한 NETFILX 플렛폼 clone coding
     <tr>
         <td>프레임워크</td>
         <td>
-         <img src="https://img.shields.io/badge/React-#61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
+         <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
         </td>
     </tr>
     <tr>
         <td>라이브러리</td>
         <td>
             <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/> 
-          <img src="https://img.shields.io/badge/React-Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"/> 
+          <img src="https://img.shields.io/badge/ReactRouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"/> 
           <img src="https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white"/> 
-          <img src="https://img.shields.io/badge/styled-components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"/> 
+          <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"/> 
           <img src="https://img.shields.io/badge/ReactRouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white"/> 
         </td>
     </tr>
